@@ -1,8 +1,9 @@
-package com.moa.planner.media;
+package com.moa.planner.group.entitiy;
 
 import java.time.LocalDateTime;
 
-import com.moa.planner.user.entity.User;
+import com.moa.planner.event.Event;
+import com.moa.planner.group.SharePermission;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,37 +21,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "media_files")
-public class MediaFile {
+@Table(name = "event_group_shares")
+public class EventGroupShare {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long mediaId;
+	private Long shareId;
 	
 	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = false)
-	private User user;
+	@JoinColumn(name = "event_id", nullable = false)
+	private Event event;
 	
-	@Enumerated(EnumType.STRING)
-	private TargetType targetType;
-	
-	private Long targetId;
-	
+	@ManyToOne
+	@JoinColumn(name = "group_id", nullable = false)
+	private Group group;
+
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	private MediaType mediaType;
-	
-	@Column(nullable = false, length = 500)
-	private String fileUrl;
-	
-	@Column(nullable = false, length = 255)
-	private String originalFilename;
-	
-	@Column(nullable = false)
-	private Long fileSizeBytes;
+	private SharePermission permission;
 	
 	@Column(nullable = false)
 	private LocalDateTime createdAt;
-	
-
 }

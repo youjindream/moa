@@ -3,7 +3,7 @@ package com.moa.planner.chat;
 import java.time.LocalDateTime;
 
 import com.moa.planner.media.MediaFile;
-import com.moa.planner.user.User;
+import com.moa.planner.user.entity.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

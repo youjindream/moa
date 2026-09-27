@@ -3,7 +3,7 @@ package com.moa.planner.event;
 import java.time.LocalDateTime;
 
 import com.moa.planner.label.Label;
-import com.moa.planner.user.User;
+import com.moa.planner.user.entity.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

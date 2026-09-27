@@ -1,4 +1,6 @@
-package com.moa.planner.label;
+package com.moa.planner.group.entitiy;
+
+import java.time.LocalDateTime;
 
 import com.moa.planner.user.entity.User;
 
@@ -16,21 +18,24 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "labels")
-public class Label {
+@Table(name = "groups")
+public class Group {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long labelId;
+	private Long groupId;
 	
 	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = false)
+	@JoinColumn(name = "owner_user_id", nullable = false)
 	private User user;
 	
-	@Column(nullable = false, length = 50)
-	private String title;
+	@Column(nullable = false, length = 100)
+	private String name;
 	
-	@Column(nullable = false, length = 10)
-	private String colorCode;
+	@Column(nullable = false)
+	private LocalDateTime createdAt;
+	
+	@Column(nullable = false)
+	private LocalDateTime updatedAt;
 
 }

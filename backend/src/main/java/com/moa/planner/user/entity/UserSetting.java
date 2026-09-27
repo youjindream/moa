@@ -1,8 +1,9 @@
-package com.moa.planner.media;
+package com.moa.planner.user.entity;
 
 import java.time.LocalDateTime;
 
-import com.moa.planner.user.entity.User;
+import com.moa.planner.user.enums.BgType;
+import com.moa.planner.user.enums.ThemeMode;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,37 +21,31 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "media_files")
-public class MediaFile {
+@Table(name = "user_settings")
+public class UserSetting {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long mediaId;
+	private Long settingId;
 	
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 	
 	@Enumerated(EnumType.STRING)
-	private TargetType targetType;
-	
-	private Long targetId;
+	@Column(nullable = false)
+	private ThemeMode themeMode;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	private MediaType mediaType;
+	private BgType bgType;
 	
-	@Column(nullable = false, length = 500)
-	private String fileUrl;
-	
-	@Column(nullable = false, length = 255)
-	private String originalFilename;
-	
-	@Column(nullable = false)
-	private Long fileSizeBytes;
+	@Column(length = 500)
+	private String bgValue;
 	
 	@Column(nullable = false)
 	private LocalDateTime createdAt;
 	
-
+	@Column(nullable = false)
+	private LocalDateTime updatedAt;
 }
