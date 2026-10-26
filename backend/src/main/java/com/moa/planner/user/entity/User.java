@@ -2,6 +2,7 @@ package com.moa.planner.user.entity;
 
 import java.time.LocalDateTime;
 
+import com.moa.planner.user.enums.UserRole;
 import com.moa.planner.user.enums.UserStatus;
 
 import jakarta.persistence.Column;
@@ -35,6 +36,10 @@ public class User {
 	
 	@Column(nullable = false, length = 50)
 	private String nickname;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private UserRole role;
 	
 	@Column(length = 500)
 	private String profileImageUrl;

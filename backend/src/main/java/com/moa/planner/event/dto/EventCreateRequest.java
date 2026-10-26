@@ -1,7 +1,6 @@
 package com.moa.planner.event.dto;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import com.moa.planner.group.SharePermission;
 
@@ -10,9 +9,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EventEditResponse {
-
-    private Long eventId;
+public class EventCreateRequest {
 
     private String title;
 
@@ -30,13 +27,9 @@ public class EventEditResponse {
 
     private Integer alarmMinutesBefore;
 
-    private Boolean isCompleted;
-
     private Boolean groupShared;
 
     private Long groupId;
 
     private SharePermission sharePermission;
-
-    private List<EventMediaResponse> mediaFiles;
 }
