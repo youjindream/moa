@@ -2,6 +2,8 @@ package com.moa.planner.diary;
 
 import java.time.LocalDateTime;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.moa.planner.diary.dto.DiaryCreateRequest;
@@ -17,13 +19,17 @@ import lombok.RequiredArgsConstructor;
 public class DiaryService {
 
 	private final DiaryRepository diaryRepository;
-	private final UserRepository userRepository; // 임시
+	private final UserRepository userRepository; 
 
 	public void createDiary(DiaryCreateRequest request) {
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String email = authentication.getName();
+		User user = userRepository.findByEmail(email).orElseThrow();
+		
 		Diary diary = new Diary();
 
-		User user = userRepository.findById(1L).orElseThrow(); // 임시
-		diary.setUser(user); // 임시
+		diary.setUser(user);
 		diary.setDiaryDate(request.getDiaryDate());
 		diary.setContent(request.getContent());
 		diary.setCreatedAt(LocalDateTime.now());

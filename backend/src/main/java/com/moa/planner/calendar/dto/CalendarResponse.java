@@ -14,6 +14,4 @@ public class CalendarResponse {
     private Integer month; 
 
     private List<CalendarEventResponse> events; 
-
-    private CalendarDayResponse selectedDay; 
 }
