@@ -32,4 +32,19 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 			@Param("startTime") LocalDateTime startTime,
 			Pageable pageable // Pageable: 조회할 데이터 개수 제한
 			);
+	
+	// '%keyword%'는 keyword를 글자 그자체로 취급함
+	// CONCAT('%', :keyword, '%')은 전달받은 검색어 앞뒤에 %를 붙임
+	@Query("""
+			SELECT e FROM Event e
+			WHERE e.user.userId = :userId
+			AND ((:searchTitle = true) AND (e.title LIKE CONCAT('%', :keyword, '%')) 
+			OR (:searchContent = true) AND (e.content LIKE CONCAT('%', :keyword, '%')))
+			ORDER BY e.startTime
+			""") // 연산 우선순위: 괄호 → NOT → AND → OR
+	List<Event> searchEvents(
+			@Param("userId") Long userId,
+			@Param("keyword") String keyword,
+			@Param("searchTitle") Boolean searchTitle,
+			@Param("searchContent") Boolean  searchContent);
 }
