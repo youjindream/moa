@@ -17,6 +17,7 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 			AND e.startTime < :endTime  
 			""") // :는 JPQL에서 매개변수를 나타내는 기호
 	List<Event> findEventsByDateRange( 
+			// @Param: 메서드로 받은 값을 JPQL에서 같은 이름의 매개변수에 연결
 			@Param("userId") Long userId,
 			@Param("startTime") LocalDateTime startTime,
 			@Param("endTime") LocalDateTime endTime);
