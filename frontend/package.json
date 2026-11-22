@@ -1,0 +1,22 @@
+{
+  "name": "moa-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "lucide-react": "^1.77.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "vite": "^7.3.8"
+  },
+  "private": true,
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@^4"
+  }
+}
