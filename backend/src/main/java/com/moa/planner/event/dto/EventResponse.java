@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 public class EventResponse {
 	
-	public EventResponse(Event event) { // 나중에 검색할때도 필요하니까
+	public EventResponse(Event event, List<EventMediaResponse> mediaResponses) { // 나중에 검색할때도 필요하니까
 	    this.setEventId(event.getEventId());
 	    this.setTitle(event.getTitle());
 	    this.setStartTime(event.getStartTime());
@@ -28,9 +28,9 @@ public class EventResponse {
 	    this.setRecurrenceRule(event.getRecurrenceRule());
 	    this.setAlarmMinutesBefore(event.getAlarmMinutesBefore());
 	    this.setIsCompleted(event.getIsCompleted());
-
+	    this.setMediaFiles(mediaResponses);
+	    
 	    // TODO: Group 관련 필드 변환
-	    // TODO: EventMedia → EventMediaResponse 변환
 	}
 
     private Long eventId;

@@ -12,11 +12,11 @@ import lombok.Setter;
 @Setter
 public class DiaryResponse {
 	
-	public DiaryResponse(Diary diary) {
+	public DiaryResponse(Diary diary, List<DiaryMediaResponse> mediaResponse) {
 		this.setDiaryId(diary.getDiaryId());
 		this.setDiaryDate(diary.getDiaryDate());
 		this.setContent(diary.getContent());
-		// TODO: DiaryMedia 
+		this.setMediaFiles(mediaResponse);
 	}
 	
 	private Long diaryId;

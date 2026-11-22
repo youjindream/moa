@@ -16,7 +16,7 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 			AND e.startTime >= :startTime 
 			AND e.startTime < :endTime  
 			""") // :는 JPQL에서 매개변수를 나타내는 기호, SELECT e는 *와 비슷
-	List<Event> findEventsByDateRange( 
+	List<Event> findEventsByDateRange(  
 			// @Param: 메서드로 받은 값을 JPQL에서 같은 이름의 매개변수에 연결
 			@Param("userId") Long userId,
 			@Param("startTime") LocalDateTime startTime,
@@ -39,8 +39,8 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 	@Query("""
 			SELECT e FROM Event e
 			WHERE e.user.userId = :userId
-			AND ((:searchTitle = true) AND (e.title LIKE CONCAT('%', :keyword, '%')) 
-			OR (:searchContent = true) AND (e.content LIKE CONCAT('%', :keyword, '%')))
+			AND (:searchTitle = true AND e.title LIKE CONCAT('%', :keyword, '%') 
+			OR :searchContent = true AND e.content LIKE CONCAT('%', :keyword, '%'))
 			ORDER BY e.startTime
 			""") // 연산 우선순위: 괄호 → NOT → AND → OR
 	List<Event> searchEvents(

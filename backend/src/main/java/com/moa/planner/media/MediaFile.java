@@ -34,7 +34,7 @@ public class MediaFile {
 	@Enumerated(EnumType.STRING)
 	private TargetType targetType;
 	
-	private Long targetId;
+	private Long targetId; // DIARY면 diaryId, EVENT면 eventId
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)

@@ -10,6 +10,7 @@ import com.moa.planner.user.dto.UserLoginRequest;
 import com.moa.planner.user.dto.UserResponse;
 import com.moa.planner.user.dto.UserUpdateRequest;
 import com.moa.planner.user.entity.User;
+import com.moa.planner.user.enums.UserRole;
 import com.moa.planner.user.enums.UserStatus;
 import com.moa.planner.user.repository.UserRepository;
 
@@ -35,6 +36,7 @@ public class UserService {
 			user.setEmail(request.getEmail());
 			user.setPasswordHash(passwordEncoder.encode(request.getPassword())); // encode(): 입력받은 비밀번호를 해시값으로 변환
 			user.setNickname(request.getNickname());
+			user.setRole(UserRole.USER);
 			user.setProfileImageUrl(request.getProfileImageUrl());
 			user.setStatus(UserStatus.ACTIVE);
 			user.setCreatedAt(LocalDateTime.now()); // now(): 현재 시간을 가져옴

@@ -15,7 +15,6 @@ public class SecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
 				// authorizeHttpRequests(): 요청 URL의 접근 권한을 설정
-				// 람다식: 매개변수 -> 실행할 코드(중괄호 내부)
 				// auth: 접근 권한 설정 객체를 받는 매개변수
 				// requestMatchers(): 특정 요청 경로를 지정
 				// permitAll(): 누구나 접근 가능

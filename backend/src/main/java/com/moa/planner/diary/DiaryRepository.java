@@ -22,7 +22,8 @@ public interface DiaryRepository extends JpaRepository<Diary, Long> {
 	@Query("""
 			SELECT d FROM Diary d
 			WHERE d.user.userId = :userId
-			AND (:searchDiary = true AND d.content LIKE CONCAT('%', :keyword, '%'))
+			AND :searchDiary = true 
+			AND d.content LIKE CONCAT('%', :keyword, '%')
 			ORDER BY d.diaryDate
 			""")
 	List<Diary> searchDiaries(

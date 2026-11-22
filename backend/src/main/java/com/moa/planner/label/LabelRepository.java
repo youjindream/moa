@@ -12,6 +12,7 @@ public interface LabelRepository extends JpaRepository<Label, Long> {
 			SELECT l FROM Label l
 			WHERE l.user.userId = :userId
 			AND l.title LIKE CONCAT('%', :keyword, '%')
+			AND :searchLabel = true
 			ORDER BY l.title
 				""")
 	List<Label> searchLabels(
