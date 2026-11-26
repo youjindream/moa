@@ -2,6 +2,13 @@
 
 일정과 일기를 한곳에서 관리하는 개인 웹 프로젝트입니다.
 
+## 목차
+1. [기술 스택](#기술-스택)
+2. [주요 기능](#주요-기능)
+3. [백엔드 핵심 구현](#백엔드-핵심-구현)
+4. [구현 화면](#구현-화면)
+5. [개발 범위](#개발-범위)
+
 ## 기술 스택
 
 - Backend: Java, Spring Boot, Spring Security, Spring Data JPA
@@ -18,40 +25,42 @@
 | 일기 관리 | 날짜별 일기 작성 및 관리 |
 | 캘린더 | 월별·일별 일정 조회 |
 | 홈 대시보드 | 오늘 일정, 일기, 다가오는 일정, 주간 통계 |
+| 통합 검색 | 일정, 일기, 라벨 검색 |
+
+## 백엔드 핵심 구현
+
+- Spring Security 기반 인증 및 사용자별 데이터 접근 제어
+- BCrypt를 활용한 비밀번호 단방향 해싱
+- Spring Data JPA를 활용한 날짜 범위 기반 일정 조회
+- 홈 대시보드 데이터 집계 및 통합 응답 처리
 
 ## 구현 화면
 
 ### 로그인
 
-<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/330e3514-32a3-468c-b90e-7c65bf7ab368" />
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/330e3514-32a3-468c-b90e-7c65bf7ab368" />
 
 ### 홈 
 
-<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/31c3a7cf-dd3b-489f-8693-9bff9314ee9f" />
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/31c3a7cf-dd3b-489f-8693-9bff9314ee9f" />
 
 ### 일정추가
 
-<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/4f6f9618-5bb1-4e60-88c8-523c52960c7c" />
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/4f6f9618-5bb1-4e60-88c8-523c52960c7c" />
 
 ### 캘린더
 
-<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/6ac56a56-4966-4d02-a8bf-898c44e4a44f" />
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/6ac56a56-4966-4d02-a8bf-898c44e4a44f" />
 
 ### 일기
 
-<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/fa72c8d2-b4de-4bec-9db7-e0e6ea60b30f" />
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/fa72c8d2-b4de-4bec-9db7-e0e6ea60b30f" />
 
 ### 검색
 
-<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/948aaa5d-3173-430f-8add-5c6060871e87" />
-
-## 백엔드 핵심 구현
-
-- Spring Security 기반 인증 및 사용자별 데이터 접근 제어
-- BCrypt를 활용한 비밀번호 암호화
-- Spring Data JPA를 활용한 날짜 범위 기반 일정 조회
-- 홈 대시보드 데이터 집계 및 통합 응답 처리
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/948aaa5d-3173-430f-8add-5c6060871e87" />
 
 ## 개발 범위
 
-Spring Boot 기반 백엔드 API와 서비스 로직, 데이터베이스 연동을 직접 구현했습니다. React 프론트엔드는 생성형 AI를 활용했습니다.
+Spring Boot 기반 REST API 설계 및 구현, 서비스 로직 작성, 데이터베이스 설계 및 연동을 직접 수행했습니다.
+React 기반 프론트엔드는 생성형 AI를 활용하여 구현했습니다.
