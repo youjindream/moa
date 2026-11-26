@@ -25,7 +25,7 @@
 
 <img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/330e3514-32a3-468c-b90e-7c65bf7ab368" />
 
-### 홈 대시보드
+### 홈 
 
 <img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/31c3a7cf-dd3b-489f-8693-9bff9314ee9f" />
 
