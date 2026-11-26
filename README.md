@@ -13,8 +13,12 @@
 | 홈 대시보드 | 오늘 일정, 일기, 다가오는 일정, 주간 통계 |
 
 ## 구현 화면
-
-*(기능별 화면 이미지 첨부)*
+<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/330e3514-32a3-468c-b90e-7c65bf7ab368" />
+<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/31c3a7cf-dd3b-489f-8693-9bff9314ee9f" />
+<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/4f6f9618-5bb1-4e60-88c8-523c52960c7c" />
+<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/6ac56a56-4966-4d02-a8bf-898c44e4a44f" />
+<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/fa72c8d2-b4de-4bec-9db7-e0e6ea60b30f" />
+<img width="1344" height="714" alt="image" src="https://github.com/user-attachments/assets/948aaa5d-3173-430f-8add-5c6060871e87" />
 
 ## 백엔드 핵심 구현
 
