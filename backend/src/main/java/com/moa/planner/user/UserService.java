@@ -34,7 +34,9 @@ public class UserService {
 			User user = new User();
 			
 			user.setEmail(request.getEmail());
-			user.setPasswordHash(passwordEncoder.encode(request.getPassword())); // encode(): 입력받은 비밀번호를 해시값으로 변환
+			// SecurityConfig에서 BCryptPasswordEncoder를 Bean으로 등록했기 때문에
+			// encode() 호출 시 BCrypt 방식으로 비밀번호를 해싱
+			user.setPasswordHash(passwordEncoder.encode(request.getPassword())); // encode(): 입력받은 비밀번호를 해시값으로 변환 
 			user.setNickname(request.getNickname());
 			user.setRole(UserRole.USER);
 			user.setProfileImageUrl(request.getProfileImageUrl());

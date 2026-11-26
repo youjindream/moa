@@ -36,7 +36,7 @@ public class SecurityConfig {
 	}
 
 	@Bean
-	PasswordEncoder passwordEncoder() { // PasswordEncoder: 비밀번호 해시 처리 및 검증을 위한 인터페이스
+	PasswordEncoder passwordEncoder() { // PasswordEncoder: 비밀번호 해시 처리 및 검증을 위한 인터페이스 (UserService에 final)
 		return new BCryptPasswordEncoder(); // BCryptPasswordEncoder(): BCrypt 방식으로 비밀번호를 해시 처리하는 객체 생성
 	}
 }
